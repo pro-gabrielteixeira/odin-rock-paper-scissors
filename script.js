@@ -43,7 +43,7 @@ function playGame() {
 	let humanScore = 0;
 	let computerScore = 0;
 	
-	for (i = 0; i < 5; i++) {
+	while (humanScore == 5 || computerScore == 5) {
 		const humanChoice = getHumanChoice();
 		const computerChoice = getComputerChoice();
 		(humanChoice == computerChoice) ? 
