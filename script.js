@@ -22,7 +22,7 @@ function getChoiceName(choice) {
 }
 
 function playRound(humanChoice, computerChoice) {
-	if ((humanChoice > computerChoice && (computerChoice == 1 || humanChoice != 2)) || computerChoice == 2 && humanChoice == 0) {
+	if ((humanChoice > computerChoice && (computerChoice == PAPER || humanChoice != SCISSORS)) || computerChoice == SCISSORS && humanChoice == ROCK) {
 			displayMatchResult.textContent = `Human won - ${getChoiceName(humanChoice)} beats ${getChoiceName(computerChoice)}`;
 			return 1;
 		}
@@ -48,9 +48,9 @@ function playGame(humanChoice) {
 document.addEventListener('click', (e) => {
 	const target = e.target;
 	if (target === userChoiseRock)
-		playGame(0);
+		playGame(ROCK);
 	else if (target === userChoisePaper)
-		playGame(1);
+		playGame(PAPER);
 	else if (target === userChoiseScissors)
-		playGame(2);
+		playGame(SCISSORS);
 })
